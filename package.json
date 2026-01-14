@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "tsx server/index.ts",
+    "dev": "tsx server/index.ts --port 7788",
     "build": "tsc && vite build",
     "start": "NODE_ENV=production node --import tsx server/index.ts",
     "preview": "vite preview"

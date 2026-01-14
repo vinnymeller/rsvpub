@@ -52,11 +52,24 @@ async function main() {
   }
 
   // Start server
-  app.listen(config.server.port, config.server.host, () => {
+  const server = app.listen(config.server.port, config.server.host, () => {
     console.log(`\nRSVPub server running at:`);
     console.log(`  http://${config.server.host}:${config.server.port}`);
     console.log(`\nData directory: ${config.storage.dataDir}`);
     console.log(`Mode: ${isDev ? 'development' : 'production'}\n`);
+  });
+
+  server.on('error', (err: NodeJS.ErrnoException) => {
+    if (err.code === 'EADDRINUSE') {
+      console.error(`\nError: Port ${config.server.port} is already in use.`);
+      console.error(`Another process is listening on ${config.server.host}:${config.server.port}`);
+    } else if (err.code === 'EACCES') {
+      console.error(`\nError: Permission denied for port ${config.server.port}.`);
+    } else {
+      console.error(`\nError starting server:`, err);
+    }
+    db.close();
+    process.exit(1);
   });
 
   // Graceful shutdown

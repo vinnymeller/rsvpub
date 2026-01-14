@@ -49,7 +49,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:7787
+Open http://localhost:7788
 
 ### With Nix
 
