@@ -7,6 +7,11 @@ Self-hosted speed reading web app for reading EPUB files using the RSVP (Rapid S
 Built for fun because I couldn't find an existing OSS RSVP reader that did quite what I wanted.
 
 
+
+https://github.com/user-attachments/assets/d4621ec0-d46b-4e6a-9075-5082898adee3
+
+
+
 ## Features
 
 ### Reading
