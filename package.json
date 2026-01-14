@@ -1,0 +1,27 @@
+{
+  "name": "rsvpub",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server/index.ts",
+    "build": "tsc && vite build",
+    "start": "NODE_ENV=production node --import tsx server/index.ts",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^25.0.8",
+    "@types/sql.js": "^1.4.9",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "epubjs": "^0.3.93",
+    "express": "^5.2.1",
+    "multer": "^2.0.2",
+    "sql.js": "^1.13.0"
+  }
+}
